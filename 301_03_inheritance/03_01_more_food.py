@@ -25,3 +25,23 @@ class Spice(Ingredient):
     def grind(self):
         print(f"You have now {self.amount} of ground {self.name}.")
 
+    def expire(self):
+        """Expires the ingredient item."""
+        print(f"whoops, these {self.name} went bad...")
+        self.name = "old " + self.name
+
+    def add_dish(self, dish):
+        """ adding the spice to a dish"""
+        print(f"Adding {self.name} to {dish}.")
+
+if __name__ == '__main__':
+    ingredient = Ingredient("tomato", 5)
+    spice = Spice("pepper", 2)
+    
+    print(ingredient)
+    print(spice)
+    
+    spice.grind()
+    spice.add_dish("pasta")
+    spice.expire()
+    print(spice)
