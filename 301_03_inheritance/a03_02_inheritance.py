@@ -10,7 +10,7 @@
 #     Take notes in your notebook. What other attributes could a `Movie()` class
 #     contain? What methods? What should the child classes inherit as-is or overwrite?
 
-class Movie():
+class Movie:
     def __init__(self, year, title):
         self.year = year
         self.title = title
@@ -27,8 +27,8 @@ class ActionMovie(Movie):
         self.pg = pg
 
     def __str__(self):
-        return f"Movie: {self.title} ({self.year})  PG: {self.pg}"
-    
+        return f"{super().__str__()}  PG: {self.pg}"
+
 if __name__ == '__main__':
     romcom = RomCom(2020, "Romantic Getaway")
     action_movie = ActionMovie(2022, "Explosive Chase")
